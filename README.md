@@ -6,5 +6,7 @@ Based On:
 
   Details at http://johnkeefe.net/make-every-week-wind-sensor-candle
 
-  Original code at https://github.com/moderndevice/Wind_Sensor
+  code at https://github.com/moderndevice/Wind_Sensor
+
+  https://www.instructables.com/Realistic-Fire-Effect-with-Arduino-and-LEDs/
 
