@@ -136,7 +136,7 @@ void setup() {
   Serial.println(numLeds);
 
   Serial.println(numLeds);
-  if (hour() >= ON_HOUR && hour() <= OFF_HOUR) {
+  if (hour() >= ON_HOUR && hour() < OFF_HOUR) {
     candleOn = true;
   } else {
     candleOn = false;
