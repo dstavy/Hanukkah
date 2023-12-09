@@ -1,7 +1,7 @@
 # Hanukkah
 Digitla Hanukkah lamp. Turns on and off based on time and date.
 Additianly has 4 wind sensors to dim the candles when blown on.
-I used an old motherboard as the surface for the lamp. On thr backside arduiino + RTC 
+I used an old motherboard as the surface for the Hanukkah lamp. 
 
 Based On:
 
