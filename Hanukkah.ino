@@ -43,7 +43,7 @@
 
 */
 
-#include <Time.h>
+#include <TimeLib.h>
 #include <TimeAlarms.h>
 #include "RTClib.h"
 
@@ -128,10 +128,7 @@ void setup() {
 
 
 
-  int row = year() - 2023;
-
-  int currentDay = dateDiff(years[row], months[row], days[row], year(), month(), day());
-  numLeds = (currentDay > 0 && currentDay <= 8) ? currentDay + 1 : 0;
+  numLeds = getNumCandels();
   Serial.print("Leds Number: ");
   Serial.println(numLeds);
 
@@ -155,7 +152,7 @@ void setup() {
 }
 
 void loop() {
-    Alarm.delay(1000); // this is nneded for the alarm to work
+  Alarm.delay(1000);  // this is nneded for the alarm to work
   // get the state of the button, HIGH (1) or LOW (0)
   //buttonState = digitalRead(buttonPin);
 
@@ -259,7 +256,7 @@ void douseCandle() {
 }
 
 void candleOnAlarm() {
-  numLeds++;
+  numLeds = getNumCandels();
   digitalWrite(13, HIGH);
   candleOn = true;
   Serial.println("Alarm candleOn: " + numLeds);
@@ -313,4 +310,11 @@ int dateDiff(int year1, int mon1, int day1, int year2, int mon2, int day2) {
 int dater(int x) {
   const int dr[] = { 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334 };
   return dr[x - 1];
+}
+
+int getNumCandels() {
+  int row = year() - 2023;
+
+  int currentDay = dateDiff(years[row], months[row], days[row], year(), month(), day());
+  return (currentDay > 0 && currentDay <= 8) ? currentDay + 1 : 0;
 }
