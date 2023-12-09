@@ -142,8 +142,6 @@ void setup() {
     candleOn = false;
   }
 
-  //setTime(RTC.getEpoch());
-  // setTime(8,29,0,1,1,11);
   Alarm.alarmRepeat(ON_HOUR, 0, 0, candleOnAlarm);    // 5:00pm every day
   Alarm.alarmRepeat(OFF_HOUR, 0, 0, candleOffAlarm);  // 5:00pm every day
 
@@ -157,6 +155,7 @@ void setup() {
 }
 
 void loop() {
+    Alarm.delay(1000); // this is nneded for the alarm to work
   // get the state of the button, HIGH (1) or LOW (0)
   //buttonState = digitalRead(buttonPin);
 
